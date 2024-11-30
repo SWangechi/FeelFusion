@@ -126,13 +126,13 @@ elif choice == "Dashboard":
         
         Take a moment to reflect on your progress and see how you're doing. Ready to dive deeper? Let's go!
     """)
-    import pages._Dashboard as dashboard
+    import _Dashboard as dashboard
     dashboard.display_dashboard()
 
 elif choice == "Resources":
-    import pages._Resources as resources
+    import _Resources as resources
     resources.resources()  # Resources page logic to be defined
 
 elif choice == "Feedback":
-    import pages._Feedback as feedback
+    import _Feedback as feedback
     feedback.feedback()  # Feedback page logic to be defined
