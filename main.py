@@ -101,7 +101,7 @@ choice = st.sidebar.selectbox("Menu", menu)
 if choice == "Home":
     # Quick Introduction to the app
     st.markdown("""
-        # Welcome to FeelFusion: Your Virtual Mental Health Companion
+        # FeelFusion: Your Virtual Mental Health Companion
         
         FeelFusion is designed to support your mental well-being by providing personalized sentiment analysis, resources, and a safe space to share your feelings. 
         Whether you're feeling down, need resources, or want to track your mental health progress, FeelFusion is here for you.
@@ -117,7 +117,7 @@ if choice == "Home":
 elif choice == "Dashboard":
     # Brief description of the Dashboard's functionality
     st.markdown("""
-        # Dashboard: Monitor Your Mental Health Progress
+        # Monitor Your Mental Health Progress
         
         The Dashboard gives you an overview of your mental health journey. Here, you can:
         - View your sentiment analysis history.
