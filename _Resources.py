@@ -5,8 +5,11 @@ def resources():
     st.markdown("""
     ### Articles & Guides:
     [Visit Online Therapy](https://www.therapywebsite.com)
+    
     [Read Mental Health Articles](https://www.mentalhealtharticles.com)
+    
     [Emergency Helplines](https://www.emergencyhelplines.com)
+    
     [Mental Health Support Groups](https://www.supportgroups.com)
     
     ### Hotlines:
