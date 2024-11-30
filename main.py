@@ -77,7 +77,7 @@ st.markdown('<h1 class="header-title">Welcome to FeelFusion</h1>', unsafe_allow_
 st.markdown('<h2 class="header-subtitle">I am your virtual therapist</h2>', unsafe_allow_html=True)
 
 # Image below the welcome text
-image_path = "app/static/images/doctor_image.png"
+image_path = "./doctor_image.png"
 if os.path.exists(image_path):
     st.image(image_path, use_container_width=True)  # Display the image below the welcome text
 else:
