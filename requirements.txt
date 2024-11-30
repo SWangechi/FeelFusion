@@ -1,1 +1,8 @@
-
+streamlit       # Replace with your installed version
+tensorflow      # Replace with your installed version
+numpy           # TensorFlow dependency
+pandas           # If used for data processing
+scikit-learn     # If used for machine learning models
+matplotlib       # If used for plotting (optional)
+Pillow           # For image handling
+joblib
