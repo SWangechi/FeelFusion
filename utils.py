@@ -5,8 +5,8 @@ import tensorflow as tf
 
 # Load the models
 try:
-    tfidf_vectorizer = joblib.load("app/models/tfidf_vectorizer.pkl")
-    lr_model = joblib.load("app/models/logistic_regression.pkl")
+    tfidf_vectorizer = joblib.load("tfidf_vectorizer.pkl")
+    lr_model = joblib.load("logistic_regression.pkl")
     bert_model = TFBertForSequenceClassification.from_pretrained("app/models/bert_model")
     bert_tokenizer = BertTokenizer.from_pretrained("bert-base-uncased")
 except Exception as e:
