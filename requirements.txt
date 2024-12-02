@@ -6,3 +6,4 @@ scikit-learn     # If used for machine learning models
 matplotlib       # If used for plotting (optional)
 Pillow           # For image handling
 joblib
+transformers
