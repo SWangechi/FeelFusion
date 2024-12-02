@@ -7,7 +7,7 @@ import tensorflow as tf
 try:
     tfidf_vectorizer = joblib.load("tfidf_vectorizer.pkl")
     lr_model = joblib.load("logistic_regression.pkl")
-    bert_model = TFBertForSequenceClassification.from_pretrained("app/models/bert_model")
+    bert_model = TFBertForSequenceClassification.from_pretrained("https://drive.google.com/drive/folders/1nc7qJog3-tex0Bbjq80jVTn52nR2TIxU?usp=drive_link")
     bert_tokenizer = BertTokenizer.from_pretrained("bert-base-uncased")
 except Exception as e:
     raise ValueError(f"Error loading models: {e}")
