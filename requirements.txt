@@ -7,3 +7,5 @@ matplotlib       # If used for plotting (optional)
 Pillow           # For image handling
 joblib
 transformers
+gdown  # If you're downloading the model from Google Drive
+
