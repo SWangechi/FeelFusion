@@ -1,5 +1,5 @@
 import streamlit as st
-from utils import predict_sentiment  # Ensure `app` is a valid module
+from utils.py import predict_sentiment  # Ensure `app` is a valid module
 
 def display_dashboard():
     st.title("📊 Mental Health Dashboard")
