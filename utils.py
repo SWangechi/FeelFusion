@@ -1,14 +1,46 @@
+import os
 import joblib
+import gdown
 from transformers import BertTokenizer, TFBertForSequenceClassification
 import numpy as np
 import tensorflow as tf
 
-# Load the models
+# Constants for model paths and Google Drive URLs
+BERT_MODEL_URL = "https://drive.google.com/drive/folders/1nc7qJog3-tex0Bbjq80jVTn52nR2TIxU?usp=sharing"  # Replace with your actual file ID
+BERT_MODEL_PATH = "models/bert_model.h5"
+TFIDF_PATH = "tfidf_vectorizer.pkl"
+LR_MODEL_PATH = "logistic_regression.pkl"
+
+# Ensure models directory exists
+if not os.path.exists("models"):
+    os.makedirs("models")
+
+# Function to download models from Google Drive
+def download_model(url, output_path):
+    if not os.path.exists(output_path):
+        print(f"Downloading model from {url}...")
+        gdown.download(url, output_path, quiet=False)
+    else:
+        print(f"Model already exists at {output_path}.")
+
+# Download models
 try:
-    tfidf_vectorizer = joblib.load("tfidf_vectorizer.pkl")
-    lr_model = joblib.load("logistic_regression.pkl")
-    bert_model = TFBertForSequenceClassification.from_pretrained("https://drive.google.com/drive/folders/1nc7qJog3-tex0Bbjq80jVTn52nR2TIxU?usp=drive_link")
+    # Download TF-IDF and Logistic Regression models if needed
+    if not os.path.exists(TFIDF_PATH) or not os.path.exists(LR_MODEL_PATH):
+        raise FileNotFoundError("TF-IDF or Logistic Regression model files are missing.")
+
+    # Download BERT model
+    download_model(BERT_MODEL_URL, BERT_MODEL_PATH)
+
+    # Load models
+    tfidf_vectorizer = joblib.load(TFIDF_PATH)
+    lr_model = joblib.load(LR_MODEL_PATH)
     bert_tokenizer = BertTokenizer.from_pretrained("bert-base-uncased")
+
+    # Load BERT model with weights
+    bert_model = TFBertForSequenceClassification.from_pretrained("bert-base-uncased", num_labels=2)
+    bert_model.load_weights(BERT_MODEL_PATH)
+
 except Exception as e:
     raise ValueError(f"Error loading models: {e}")
 
@@ -27,6 +59,7 @@ mental_health_keywords = {
     'Personality Disorders': ['borderline', 'antisocial', 'narcissistic', 'avoidant', 'paranoid'],
 }
 
+# Prediction function
 def predict_sentiment(text, model_type):
     """
     Predicts sentiment of a given text using the selected model or based on keywords.
