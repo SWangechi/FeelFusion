@@ -7,7 +7,7 @@ import tensorflow as tf
 
 # Constants for model paths and Google Drive URLs
 BERT_MODEL_URL = "https://drive.google.com/uc?id=1nc7qJog3-tex0Bbjq80jVTn52nR2TIxU"
-BERT_MODEL_PATH = "models/bert_model.h5"
+BERT_MODEL_PATH = "bert_model/tf_model.h5"
 TFIDF_PATH = "tfidf_vectorizer.pkl"
 LR_MODEL_PATH = "logistic_regression.pkl"
 
