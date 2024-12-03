@@ -1,11 +1,10 @@
-streamlit       # Replace with your installed version
-tensorflow      # Replace with your installed version
-numpy           # TensorFlow dependency
-pandas           # If used for data processing
-scikit-learn     # If used for machine learning models
-matplotlib       # If used for plotting (optional)
-Pillow           # For image handling
+streamlit>=1.21
+tensorflow>=2.11
+numpy
+pandas
+scikit-learn
+matplotlib
+Pillow
 joblib
-transformers
-gdown  # If you're downloading the model from Google Drive
-
+transformers>=4.30
+gdown
