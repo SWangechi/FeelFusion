@@ -5,12 +5,6 @@ from transformers import BertTokenizer, TFBertForSequenceClassification
 import numpy as np
 import tensorflow as tf
 
-# Constants for model paths and Google Drive URLs
-BERT_MODEL_URL = "https://drive.google.com/drive/folders/1YsVHaAorrtfGFlIXpnikaxVwMDli34Cc?usp=sharing"
-BERT_MODEL_PATH = "models/tf_model.h5"
-TFIDF_PATH = "tfidf_vectorizer.pkl"
-LR_MODEL_PATH = "logistic_regression.pkl"
-
 # Ensure models directory exists
 os.makedirs("models", exist_ok=True)
 
@@ -26,6 +20,12 @@ def download_model(url, output_path):
 try:
     # Download BERT model
     download_model(BERT_MODEL_URL, BERT_MODEL_PATH)
+# Constants for model paths and Google Drive URLs
+BERT_MODEL_URL = "https://drive.google.com/drive/folders/1YsVHaAorrtfGFlIXpnikaxVwMDli34Cc?usp=sharing"
+BERT_MODEL_PATH = download_model("models/bert_model")
+TFIDF_PATH = "tfidf_vectorizer.pkl"
+LR_MODEL_PATH = "logistic_regression.pkl"
+
 
     # Load TF-IDF and Logistic Regression models
     if os.path.exists(TFIDF_PATH) and os.path.exists(LR_MODEL_PATH):
