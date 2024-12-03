@@ -6,5 +6,5 @@ scikit-learn
 matplotlib
 Pillow
 joblib
-transformers>=4.30
+transformers==4.46.3
 gdown
